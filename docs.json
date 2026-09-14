@@ -1,0 +1,94 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "Network Manager",
+  "colors": {
+    "primary": "#ef7025",
+    "light": "#eec9bc",
+    "dark": "#4fa1ab"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Help Center",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/overview",
+              "getting-started/navigating-the-app",
+              "getting-started/key-concepts"
+            ]
+          },
+          {
+            "group": "Customers",
+            "pages": [
+              "customers/add-a-customer",
+              "customers/edit-customer-details",
+              "customers/manage-customer-accounts"
+            ]
+          },
+          {
+            "group": "Properties & Units",
+            "pages": [
+              "properties/add-a-property",
+              "properties/manage-units",
+              "properties/assign-customer-to-unit"
+            ]
+          },
+          {
+            "group": "Meters",
+            "pages": [
+              "meters/add-a-meter",
+              "meters/assign-meter-to-unit",
+              "meters/replace-a-meter",
+              "meters/meter-status-and-alerts"
+            ]
+          },
+          {
+            "group": "Readings & Billing",
+            "pages": [
+              "readings/enter-a-reading",
+              "readings/review-readings",
+              "billing/generate-a-bill",
+              "billing/manage-invoices"
+            ]
+          },
+          {
+            "group": "Troubleshooting & FAQs",
+            "pages": [
+              "troubleshooting/common-issues",
+              "faqs/general"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Contact Support",
+          "href": "mailto:hello@networknation.tech",
+          "icon": "envelope"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact Support",
+        "href": "mailto:hello@networknation.tech"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Network Manager",
+      "href": "https://www.networknation.tech"
+    }
+  },
+  "footer": {
+    "socials": {}
+  }
+}

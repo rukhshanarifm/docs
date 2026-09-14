@@ -1,0 +1,52 @@
+---
+title: "Network Manager Terminology: Key Concepts Explained"
+sidebarTitle: "Key Concepts"
+description: "Definitions of the core terms and data model used in Network Manager, from utility networks and properties to meters, readings, and bills."
+---
+
+Understanding the terminology used in Network Manager will help you work with the app more efficiently and avoid confusion when setting up or managing your network. The data model follows a clear hierarchy: a **Network** contains **Properties**, each of which contains **Units**, each of which has one or more **Meters**. Meters produce **Readings**, and readings are used to generate **Bills**.
+
+## Term definitions
+
+<Accordion title="Network / Utility Network">
+  A utility network is the private infrastructure you manage — the pipes, cables, or distribution system that delivers electricity, water, heat, or gas to the properties and units in your portfolio. In Network Manager, your account is scoped to your network, and all properties, meters, and customers belong to it.
+</Accordion>
+
+<Accordion title="Property">
+  A property is a building or site connected to your utility network. This is typically an apartment block, residential complex, or commercial building. Each property contains one or more units. You must create a property record before you can add units or meters beneath it.
+</Accordion>
+
+<Accordion title="Unit">
+  A unit is an individual dwelling or space within a property — for example, a single apartment, office, or commercial unit. Units are the point at which consumption is measured and customers are assigned. Each unit can have one or more meters attached to it.
+</Accordion>
+
+<Accordion title="Customer">
+  A customer is the person or organisation responsible for paying for utility consumption at one or more units. Customer records store contact and billing information, and are linked to the units they occupy. A customer must exist in the system before they can be associated with a unit or receive a bill.
+</Accordion>
+
+<Accordion title="Meter">
+  A meter is a physical device that measures utility consumption at a unit. In Network Manager, each meter record represents one such device and is configured with the utility type it measures (electricity, water, heat, or gas) and linked to the unit where it is installed. Meter records are the basis for all reading and billing activity.
+</Accordion>
+
+<Accordion title="Reading">
+  A reading is a recorded measurement taken from a meter at a specific point in time. Readings capture the cumulative or interval consumption figure shown on the meter. They are entered into Network Manager manually or through automated data acquisition, and they form the source data used to calculate consumption and generate bills.
+</Accordion>
+
+<Accordion title="Bill / Invoice">
+  A bill (also referred to as an invoice) is a charge issued to a customer based on their recorded consumption over a given period. Bills are calculated from the difference between successive meter readings and any applicable tariffs. Network Manager tracks the status of each bill and supports payment recording and disbursement.
+</Accordion>
+
+<Note>
+  Network Manager supports four utility types: **electricity**, **water**, **heat**, and **gas**. Each meter is assigned to one utility type, and billing is calculated accordingly. A single unit may have meters for more than one utility type.
+</Note>
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Getting Started Overview" icon="rocket" href="/getting-started/overview">
+    See how these concepts fit together in the core operational workflow.
+  </Card>
+  <Card title="Navigating the App" icon="map" href="/getting-started/navigating-the-app">
+    Learn which section of the app corresponds to each concept.
+  </Card>
+</CardGroup>

@@ -1,0 +1,45 @@
+---
+title: "How to Replace a Meter in Network Manager Step by Step"
+sidebarTitle: "Replace a Meter"
+description: "Update Network Manager when a physical meter is swapped out in the field, so readings and billing remain accurate and attributed to the new device."
+---
+
+When a physical meter is replaced in the field, you must update Network Manager to reflect the change — this ensures readings and billing remain accurate and are correctly attributed to the new device. Failing to update the system after a physical swap can cause billing gaps or misattributed consumption.
+
+<Steps>
+  <Step title="Record the final reading on the old meter">
+    Before the old meter is removed from the field, note its final reading. You will need this value to close out the old meter's record accurately.
+  </Step>
+  <Step title="Navigate to the old meter's record">
+    In Network Manager, go to the Meters section and open the record for the meter being replaced.
+  </Step>
+  <Step title="Enter the final reading for the old meter">
+    Record the final reading you noted in step 1 against the old meter's record.
+  </Step>
+  <Step title="Mark the old meter as decommissioned or removed">
+    Update the old meter's status to indicate it has been removed or decommissioned. This preserves its historical data while marking it as no longer in service.
+  </Step>
+  <Step title="Add the new meter">
+    Register the new meter in Network Manager, entering its serial number, utility type, and any other required fields. For detailed instructions, see [How to Add a Meter](/meters/add-a-meter).
+  </Step>
+  <Step title="Assign the new meter to the same unit">
+    Assign the new meter to the same unit the old meter was serving. For detailed instructions, see [How to Assign a Meter to a Unit](/meters/assign-meter-to-unit).
+  </Step>
+  <Step title="Enter the opening reading for the new meter">
+    Record the opening reading for the new meter. This establishes the starting point for all future consumption calculations on this device.
+  </Step>
+</Steps>
+
+<Warning>
+  Always record the final reading on the old meter before replacing it. Missing this step can cause billing gaps that are difficult to reconcile after the fact.
+</Warning>
+
+<Note>
+  The billing history associated with the old meter is preserved and is not lost when you decommission it. You can still view historical readings and billing records tied to the old meter's record.
+</Note>
+
+## Related guides
+
+- [Add a Meter](/meters/add-a-meter)
+- [Assign a Meter to a Unit](/meters/assign-meter-to-unit)
+- [Enter a Reading](/readings/enter-a-reading)

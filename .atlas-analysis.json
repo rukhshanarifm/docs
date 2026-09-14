@@ -1,0 +1,78 @@
+{
+  "projectType": "saas",
+  "projectName": "Network Manager",
+  "projectDescription": "A web application for network managers to operate private utility networks — managing customers, properties, meters, readings, billing, and payments across electricity, water, heat, and gas utilities.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Help Center",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/overview",
+              "getting-started/navigating-the-app",
+              "getting-started/key-concepts"
+            ]
+          },
+          {
+            "group": "Customers",
+            "pages": [
+              "customers/add-a-customer",
+              "customers/edit-customer-details",
+              "customers/manage-customer-accounts"
+            ]
+          },
+          {
+            "group": "Properties & Units",
+            "pages": [
+              "properties/add-a-property",
+              "properties/manage-units",
+              "properties/assign-customer-to-unit"
+            ]
+          },
+          {
+            "group": "Meters",
+            "pages": [
+              "meters/add-a-meter",
+              "meters/assign-meter-to-unit",
+              "meters/replace-a-meter",
+              "meters/meter-status-and-alerts"
+            ]
+          },
+          {
+            "group": "Readings & Billing",
+            "pages": [
+              "readings/enter-a-reading",
+              "readings/review-readings",
+              "billing/generate-a-bill",
+              "billing/manage-invoices"
+            ]
+          },
+          {
+            "group": "Troubleshooting & FAQs",
+            "pages": [
+              "troubleshooting/common-issues",
+              "faqs/general"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Customer account management",
+    "Property and unit administration",
+    "Multi-utility meter management (electricity, water, heat, gas)",
+    "Meter reading entry and validation",
+    "Automated bill generation",
+    "Invoice management and payment tracking",
+    "Meter replacement workflow",
+    "Meter status and alert monitoring"
+  ],
+  "publicApiSurface": []
+}
