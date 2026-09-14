@@ -16,6 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
+              "getting-started/start-here",
               "getting-started/overview",
               "getting-started/navigating-the-app",
               "getting-started/key-concepts"
@@ -59,7 +60,9 @@
             "group": "Troubleshooting & FAQs",
             "pages": [
               "troubleshooting/common-issues",
-              "faqs/general"
+              "faqs/general",
+              "reference/glossary",
+              "reference/reviewing-docs"
             ]
           }
         ]
