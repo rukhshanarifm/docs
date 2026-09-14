@@ -1,0 +1,134 @@
+---
+title: "How to Review a Help Topic Before It Ships"
+sidebarTitle: "Reviewing Docs"
+description: "The check that separates a page someone signed off from a page someone actually clicked through. For the Network Nation team, not for network managers."
+---
+
+<Note>
+  **This page is for the Network Nation team**, not for network managers. It is the
+  process for checking a help topic is true before it goes live.
+</Note>
+
+## Why this exists
+
+In one pass over the live app, **six discrepancies were found in five topics** — and every
+one was a writing-process failure, not a product bug. The topics had been written against
+the code, so their routes were right and their *steps* drifted anyway.
+
+The most instructive finding: the single demonstrably wrong instruction was on a page
+already marked approved and published. It told network managers to use a button that does
+not exist on the screen.
+
+**Approval means someone signed off. It does not mean someone clicked through it.** This
+page is what makes approval mean something.
+
+## The one rule that matters
+
+<Card title="Click it before you write it" icon="hand-pointer">
+  **Every instruction must be performed in the app, in order, before it ships.** Not
+  checked against the code. Not checked against a ticket. Performed — following your own
+  numbered steps as written, in the order a network manager would.
+</Card>
+
+Two failure modes this catches that nothing else does:
+
+<AccordionGroup>
+  <Accordion title="Controls that do not exist" icon="ghost">
+    A topic described a "Reveal temporary password" button. The customer page has exactly
+    two buttons: **Send invitation email** and **Login as customer**. The topic was
+    approved and published.
+
+    The code tells you a screen exists. It does not tell you what is on it.
+  </Accordion>
+
+  <Accordion title="Default state" icon="eye-slash">
+    Several topics described the grouping toggle as a way to *break up* a flat list. It is
+    the reverse: **Group by property is the default landing view**, and **List all** is
+    what produces the flat list with the columns most topics then tell you to read.
+
+    A reader following those steps never reaches the column, because the step before it
+    says to read something that is not on screen yet.
+
+    This is why you must **start from the sidebar, not a deep link** — deep links skip the
+    default state, which is exactly where this error hides.
+  </Accordion>
+</AccordionGroup>
+
+## What "performed" means
+
+- **Start from the sidebar**, the way a network manager does.
+- **Do every step**, including the ones that seem too obvious to check.
+- **Read labels off the screen and paste them in.** Do not retype from memory — one topic
+  said "Manual transaction" where the button says **Make a transaction**.
+- **Count things rather than sampling them.** One topic listed four filter chips; there
+  are nine.
+
+## Where you must stop
+
+The demo holds shared data. Read-only by default:
+
+<Warning>
+  **Never submit a form** — no transactions, charges or tenant moves. **Do not open an edit
+  affordance on a live record** without sign-off: the pencil icons on a customer page and
+  the **Continue** button in a transaction flow are both out of bounds.
+</Warning>
+
+Searching, filtering, sorting, paginating and opening detail pages are all fine.
+
+When a step sits behind that line, **write the step and mark it unverified** rather than
+guessing or omitting it. Naming an unverified step is honest; writing it as though you saw
+it is not.
+
+## Reviewer checklist
+
+<Steps>
+  <Step title="Every step performed in the app, from the sidebar, in order, as written" />
+  <Step title="The default landing state of each screen is described correctly" />
+  <Step title="Every UI label pasted from the screen, not retyped" />
+  <Step title="Countable things counted, not sampled" />
+  <Step title="Known limitations present, specific, and distinguishing absent from hidden">
+    "There is no tamper detection" and "readings exist but are never shown" are different
+    facts. Someone disputing a charge needs to know which one they face.
+  </Step>
+  <Step title="No test data reported as a product defect">
+    `Test 1` and `- test` suffixes, `.invalid` emails, duplicate serials and implausible
+    balances are fixtures.
+  </Step>
+  <Step title="Currency symbols preserved">
+    The portfolio spans the UK and Nigeria. Currency is part of the fact — never normalise
+    to a bare number.
+  </Step>
+  <Step title="Absence claims verified visually and in the page markup">
+    "There is no X" is the easiest claim to get wrong by only looking at screens you
+    happened to open. Check the screens a user would look on, **and** search the markup
+    across every main screen.
+  </Step>
+  <Step title="Unverified steps explicitly marked as such" />
+</Steps>
+
+## When the answer is "the platform cannot"
+
+These pages carry the most risk and deserve the most care. State the answer in the first
+sentence, in bold — **"You can't."** — then do three more things:
+
+1. **Say why the assumption was reasonable.** The platform holds detailed meter and reading
+   data, so it *looks* like the sort of system that would flag interference. It does not.
+2. **Name the near-match that will mislead them.** The resident-facing app does export
+   statements. Someone who hears "the platform can export statements" needs to know that is
+   a different application.
+3. **Give the real fallback** — a manual check, or escalation with specified details.
+
+<Tip>
+  If a topic records that an earlier draft got something wrong, **keep that note in the
+  file**. A wrong answer caught once will be reintroduced by someone who does not know it
+  was wrong.
+</Tip>
+
+## When the app changes
+
+A renamed label or a moved control invalidates the topic **and** any screenshots of it.
+
+If a limitation is lifted, **replace the topic rather than editing around it** — pages
+written around an absence read incoherently once the absence is gone. And re-run the
+absence checks: they are cheap, and they are the only thing that will tell you an export
+button has appeared somewhere.
