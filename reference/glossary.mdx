@@ -1,0 +1,187 @@
+---
+title: "Network Manager Glossary: Terms and Definitions"
+sidebarTitle: "Glossary"
+description: "An alphabetical reference of terms used across Network Manager, covering the data model, billing workflow, meters, readings, and account roles."
+---
+
+The words Network Manager uses, what each one actually means, and the ones that are easy
+to confuse with each other.
+
+<Note>
+  **Three words do most of the damage.** **Property unit** is a *place*, **account** is a
+  *bill payer*, and **customer** is a *person*. They sound interchangeable and are not.
+  Most first-week confusion traces back to these three.
+</Note>
+
+## The structure everything hangs off
+
+Every record in the platform sits somewhere on this chain:
+
+```
+Organisation  →  Client  →  Property Unit Group  →  Property Unit
+                                                 →  Account
+```
+
+Read it as: *the utility operator* serves *landlords*, who own *buildings*, which contain
+*flats* that are billed to *accounts*.
+
+---
+
+## A–Z
+
+### Account
+
+The **bill payer** — the financially responsible party for utility use at a unit. This is
+what carries the **balance**: charges post against it, payments credit it.
+
+Each account has a friendly identifier shown in the **Accounts** list. A resident's own
+name and the account name are often not identical, which is why a search can "fail" in one
+list and work in another.
+
+When a unit is empty it is still held by an account — a **landlord account** — so costs
+during a vacancy remain attributable to someone.
+
+### Auto deduct
+
+A setting that takes a **non-commodity charge** automatically from a resident's balance
+when it falls due, instead of waiting for them to pay it.
+
+When it fires it takes the **full amount regardless of the balance**, so it can push an
+account into debt. That is deliberate: the alternative would leave money owed but
+invisible.
+
+It can be set from either side, and the two are not the same thing:
+
+| Who sets it | What happens at a change of tenancy |
+|---|---|
+| **You**, on the charge | Applies as a term of the charge |
+| **The resident**, on their account | Ends with their tenancy — it does not transfer |
+
+A resident's consent ending with their tenancy is intentional: inheriting it would mean
+drawing money from a new resident's balance on someone else's decision.
+
+### Balance
+
+What a resident owes or is owed, shown in the **Accounts** list once you click
+**List all**. Negative means they owe money; positive means they are in credit.
+
+It is current to the **last meter reading**, not the last bill. It already includes usage
+that has been read but not yet formally billed, and payments still clearing — so it is
+ahead of the billing run, not behind it.
+
+### Client
+
+The landlord or customer organisation your organisation serves. A client owns buildings
+and the **tariffs** used within them.
+
+**One organisation has many clients.** Never assume one client per organisation.
+
+### Commodity
+
+What is being measured and billed: **electricity**, **water**, **heat** or **gas**.
+Commodity lives on meters, billing points and tariffs.
+
+### Customer
+
+A **person** — a human being who lives at a unit. Customers appear under **Customers**
+and log into the separate resident-facing app.
+
+**One account can have more than one customer on it** — a couple sharing a flat, for
+example. One is the primary holder; others are additional holders.
+
+### End user
+
+Another name for a **customer** or resident. The term distinguishes them from network
+managers: the two are entirely separate user types, with separate logins and separate
+applications.
+
+### Network *(retired)*
+
+**"Network" no longer means anything in the platform.** It used to be a grouping inside an
+organisation; its job was split between the **commodity** and the hierarchy above. There
+is no network entity.
+
+Avoid the word in training and support conversations. Someone asking "how do I create a
+new network?" almost always means a new **property unit group**.
+
+It survives in two names only: *network manager* (the role) and *network balance* (a
+property unit group's ledger).
+
+### Network manager
+
+**You** — the administrator who runs a utility network day to day.
+
+Access is **scoped**, and two network managers at the same client can legitimately see
+different things. Scope can be set at the level of the whole organisation, a single
+client, a single property unit group, or a single property unit. Everything you can see is
+already filtered to your scope, which is why lists span all your facilities without you
+choosing one first.
+
+Scope controls **what you can see**, not **what you can do to it**. Within your own scope
+there is no seniority tier.
+
+### Non-commodity charge
+
+A charge that is not metered utility usage — rent, a service charge, security, gardening,
+waste. These are the charges **auto deduct** applies to.
+
+### Organisation
+
+The utility operator itself, and the top-level entity. It sets the **currency**, the
+**timezone**, the **branding** and the payment provider.
+
+The timezone matters more than it sounds: all dates, charge boundaries and due times are
+interpreted in the organisation's timezone, never your browser's. A colleague in a
+different country sees the same times you do.
+
+### Property unit
+
+A **place** — the individual flat, house or communal space. It can also be a generation
+site or a substation.
+
+A property unit has **one account at a time**, but many accounts over its lifetime, as
+residents come and go.
+
+### Property unit group
+
+A **building or site**: the units that share an address. It owns the accounts and any
+building-level bulk meters.
+
+This is the most-renamed concept in conversation. All of these mean the same thing:
+
+- Site
+- Facility
+- Property
+- Building
+- Property unit group *(the app's own name)*
+
+If someone says "add this to the site", they mean the property unit group.
+
+### Register
+
+A counter on a meter. One meter can have several — which is why a statement's line items
+and a meter's registers line up with each other.
+
+### Superuser
+
+A network manager with implicit access to everything, across all organisations. A small
+number of actions are restricted to superusers — most visibly the **Users** section.
+
+**If you do not see Users in the sidebar, you are not a superuser.** That is normal; most
+network managers are not.
+
+### Tariff
+
+The rates a billing point is charged at. Tariffs belong to a **client**.
+
+---
+
+## Words that are easy to mix up
+
+| These sound alike | But |
+|---|---|
+| Account / Customer | A bill payer vs. a person. One account can have several customers |
+| Property unit / Property unit group | A flat vs. the building it sits in |
+| Network / Network manager | The first is retired; the second is your role |
+| Balance / Cleared balance | Only one figure is shown, and it includes payments still clearing |
+| Non-commodity charge / Metered usage | Fees and rent vs. what a meter measured |
